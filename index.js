@@ -82,7 +82,7 @@ let wishInfo = [
 let commonBirthdayHTMLTemplate; // use this to create a template and add this to the below sendMail function in html attribute.
 
 
-let scheduledWishingTime = "12 20 * * *";
+let scheduledWishingTime = "21 20 * * *";
 // let scheduledWishingTime = "01 00 * * *";
 // let scheduleEveryTenSecond = "*/10 * * * * *"; 
 // let scheduleDaily = "0-1 0 * * * *"; // run this daily between 12:00 am to 12:01 am
@@ -101,9 +101,6 @@ const dateChecker = () => {
     for(let i=0; i<wishInfo.length; i++){
         let transporterObj = {};
         if(current_date === wishInfo[i].date && current_month === wishInfo[i].month /*&& current_time === wishing_time*/){
-            
-
-            console.log("to-----", wishInfo[i].to);
 
             transporterObj.to = wishInfo[i].to;
             transporterObj.subject = wishInfo[i].subject || `Best wishes for your great day ❤`;
