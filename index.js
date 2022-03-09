@@ -22,7 +22,7 @@ app.use("/", (req,res,next)=>{
 let wishInfo = [
     {
         info: "Birthday wish Anshu from deployment",
-        date: "8",
+        date: "9",
         month: "3",
         to: "anshumanranjan1998@gmail.com,anshumanformal@gmail.com",
         subject: "Happy birthday wish from Anshu deployment check",
@@ -82,7 +82,7 @@ let wishInfo = [
 let commonBirthdayHTMLTemplate; // use this to create a template and add this to the below sendMail function in html attribute.
 
 
-let scheduledWishingTime = "36 20 * * *";
+let scheduledWishingTime = "22 9 * * *";
 // let scheduledWishingTime = "01 00 * * *";
 // let scheduleEveryTenSecond = "*/10 * * * * *"; 
 // let scheduleDaily = "0-1 0 * * * *"; // run this daily between 12:00 am to 12:01 am
