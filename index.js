@@ -3,6 +3,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const path = require('path');
 const cron = require("node-cron");
+const moment = require("moment");
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -82,7 +83,7 @@ let wishInfo = [
 let commonBirthdayHTMLTemplate; // use this to create a template and add this to the below sendMail function in html attribute.
 
 
-let scheduledWishingTime = "48 9 * * *";
+let scheduledWishingTime = "2 8 * * *";
 // let scheduledWishingTime = "01 00 * * *";
 // let scheduleEveryTenSecond = "*/10 * * * * *"; 
 // let scheduleDaily = "0-1 0 * * * *"; // run this daily between 12:00 am to 12:01 am
@@ -94,9 +95,10 @@ let scheduledWishingTime = "48 9 * * *";
 const dateChecker = () => {
 
     let transporterArray = [];
-    const current_date = new Date().getDate().toString();
-    const current_month = new Date().getMonth() < 12 ? (new Date().getMonth() + 1).toString() : "1";
-    const current_time = new Date().toLocaleTimeString();
+    const current_date = moment().date().toString();
+    const current_month = moment().month() < 12 ? (moment().month()+1).toString() : "1";
+    const current_time = moment().subtract('5:30', 'hours');
+    // const current_time = new Date().toLocaleTimeString();
 
     for(let i=0; i<wishInfo.length; i++){
         let transporterObj = {};
