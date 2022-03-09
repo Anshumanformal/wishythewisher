@@ -83,7 +83,7 @@ let wishInfo = [
 let commonBirthdayHTMLTemplate; // use this to create a template and add this to the below sendMail function in html attribute.
 
 
-let scheduledWishingTime = "2 8 * * *";
+let scheduledWishingTime = "56 12 * * *";
 // let scheduledWishingTime = "01 00 * * *";
 // let scheduleEveryTenSecond = "*/10 * * * * *"; 
 // let scheduleDaily = "0-1 0 * * * *"; // run this daily between 12:00 am to 12:01 am
