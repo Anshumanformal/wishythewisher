@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 app.set('views',path.join(__dirname, 'views'));
 app.set('view-engine', 'ejs');
 app.use(express.json());
-app.use(express.urlencoded({ extended:true}));
+app.use(express.urlencoded({ extended:true }));
 
 app.use("/", (req,res,next)=>{
     res.render('index.ejs',{
@@ -22,8 +22,8 @@ app.use("/", (req,res,next)=>{
 
 let wishInfo = [
     {
-        info: "Birthday wish Anshu from deployment",
-        date: "10",
+        info: "Birthday wish Anshu from deployment check",
+        date: "11",
         month: "3",
         to: "anshumanranjan1998@gmail.com,anshumanformal@gmail.com",
         subject: "Happy birthday wish from Anshu deployment check",
@@ -75,7 +75,47 @@ let wishInfo = [
         month: "7",
         to: "aayushmanranjan24@gmail.com,meraghar1998@gmail.com",
         subject: "Congratulations Shubho on your academic year completion",
-        text: "Many many congratulations Shubho on Kudos on successful completion of your academic year. My best wishes for your upcoming ventures and activities you wish to perform. I urge you to stay safe and reach heights in your career and life!! Stay blessed and enjoy your day ❤"
+        text: "Many many congratulations Shubho on Kudos on successful completion of your academic year❤❤. My best wishes for your upcoming ventures and activities you wish to perform. I urge you to stay safe and reach heights in your career and life!! Stay blessed and enjoy your day ❤"
+    },
+    {
+        info: "Independence Day",
+        date: "15",
+        month: "8",
+        to: "anshumanranjan1998@gmail.com,aayushmanranjan24@gmail.com,meraghar1998@gmail.com",
+        subject: "Happy Independence Day",
+        text: "Wish you a very happy Independence Day❤"
+    },
+    {
+        info: "Gandhi Jayanti",
+        date: "2",
+        month: "10",
+        to: "anshumanranjan1998@gmail.com,aayushmanranjan24@gmail.com,meraghar1998@gmail.com",
+        subject: "Happy Gandhi Jayanti",
+        text: "Wish you a very happy Gandhi Jayanti❤"
+    },
+    {
+        info: "Republic Day",
+        date: "26",
+        month: "1",
+        to: "anshumanranjan1998@gmail.com,aayushmanranjan24@gmail.com,meraghar1998@gmail.com",
+        subject: "Happy Republic Day",
+        text: "Wish you a very happy Republic Day❤"
+    },
+    {
+        info: "Christmas",
+        date: "25",
+        month: "12",
+        to: "anshumanranjan1998@gmail.com,aayushmanranjan24@gmail.com,meraghar1998@gmail.com",
+        subject: "Merry Christmas",
+        text: "Wish you a very happy Merry Christmas❤. May Santa bring a lot of gifts and joy to your life❤❤"
+    },
+    {
+        info: "New Year Day",
+        date: "1",
+        month: "1",
+        to: "anshumanranjan1998@gmail.com,aayushmanranjan24@gmail.com,meraghar1998@gmail.com",
+        subject: "Happy New Year",
+        text: "Wishing you a very happy new year❤. May god bless you and you have a healthy, wealthy and prosperous new year😊❤"
     },
     
 ]
@@ -83,13 +123,14 @@ let wishInfo = [
 let commonBirthdayHTMLTemplate; // use this to create a template and add this to the below sendMail function in html attribute.
 
 
-let scheduledWishingTime = "42 6 * * *";
+let scheduledWishingTime = "31 18 * * *";
 // let scheduledWishingTime = "01 00 * * *";
 // let scheduleEveryTenSecond = "*/10 * * * * *"; 
 // let scheduleDaily = "0-1 0 * * * *"; // run this daily between 12:00 am to 12:01 am
 //1. Approach 1 - Run the cron job at specific time to send email. (recommended)
 //2. Approach 2 - Run the cron job for an interval(say daily between 12:00 am to 12:01 am) and specify the wishing time within the period.
-// const wishing_time = "12:00:10 am";
+
+// const wishing_time = "12:01:00 am";
 
 
 const dateChecker = () => {
@@ -97,8 +138,7 @@ const dateChecker = () => {
     let transporterArray = [];
     const current_date = moment().date().toString();
     const current_month = moment().month() < 12 ? (moment().month()+1).toString() : "1";
-    const current_time = moment().subtract('5:30', 'hours');
-    // const current_time = new Date().toLocaleTimeString();
+    // const current_time = moment().subtract('5:30', 'hours');
 
     for(let i=0; i<wishInfo.length; i++){
         let transporterObj = {};
