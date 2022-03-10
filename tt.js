@@ -6,7 +6,7 @@
 const moment = require("moment");
 
 // const current_date_ist = moment('2022-03-09T18:26:00+05:30').toLocaleString();
-const server_date_utc = moment("2022-03-09T18:55:44+05:30").utc();
+const server_date_utc = moment("2022-03-10T12:08:39+05:30").utc();
 // const moment_date = moment().date().toString();
 // const moment_month = moment().month() < 12 ? (moment().month()+1).toString() : "1";
 
