@@ -4,7 +4,7 @@
 3. This is a boilerplate code which can also be used for creating reminders as well.
 
 ## How to use
-1. Download/clone the repo.
+1. <a href="https://github.com/Anshumanformal/wishythewisher/archive/refs/tags/v.1.0.0.zip">Download</a>/clone the repo.
 2. Install the dependencies.
 3. Provide the email address and password.
 4. Provide users whom you want to send email on a scheduled basis.
