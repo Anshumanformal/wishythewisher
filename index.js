@@ -22,117 +22,21 @@ app.use("/", (req,res,next)=>{
 
 let wishInfo = [
     {
-        info: "Birthday wish Anshu from deployment check",
-        date: "11",
-        month: "3",
-        to: "anshumanranjan1998@gmail.com,anshumanformal@gmail.com",
-        subject: "Happy birthday wish from Anshu deployment check",
-        text: "deployment check Wishing you a very happy birthday Anshu!! Stay blessed and enjoy your day ❤"
+        info: "<Any info like Birthday wish, Marriage anniversary, Independence Day etc..>",
+        date: "<Specify date -> for single digit, don't append with 0",
+        month: "Specify month -> for single digit, don't append with 0",
+        to: "<Specify the email addresses to send. Separate multiple addresses with comma>",
+        subject: "<Your subject for e-mail>",
+        text: "<Your text for e-mail. You can add emojis too!😊>"
     },
-    {
-        info: "Birthday wish Anshu from deployment check",
-        date: "12",
-        month: "3",
-        to: "anshumanranjan1998@gmail.com,anshumanformal@gmail.com",
-        subject: "Happy birthday wish from Anshu deployment check",
-        text: "deployment check Wishing you a very happy birthday Anshu!! Stay blessed and enjoy your day ❤"
-    },
-    {
-        info: "Birthday wish Anshu",
-        date: "15",
-        month: "4",
-        to: "anshumanranjan1998@gmail.com,anshumanformal@gmail.com",
-        subject: "Happy birthday wish from Anshu",
-        text: "Wishing you a very happy birthday Anshu!! Stay blessed and enjoy your day ❤"
-    },
-    {
-        info: "Birthday wish Shubho",
-        date: "26",
-        month: "11",
-        to: "aayushmanranjan24@gmail.com, aayushmanranjan26@gmail.com",
-        subject: "Happy birthday wish from Anshu",
-        text: "Wishing you a very happy birthday Shubho!! Stay safe, blessed and enjoy your day ❤"
-    },
-    {
-        info: "Birthday wish Mummy",
-        date: "16",
-        month: "5",
-        to: "meraghar1998@gmail.com",
-        subject: "Happy birthday wish from Anshu",
-        text: "Wishing you a very happy birthday Mummy!! Stay blessed and enjoy your day ❤"
-    },
-    {
-        info: "Birthday wish Papa",
-        date: "31",
-        month: "1",
-        to: "meraghar1998@gmail.com",
-        subject: "Happy birthday wish from Anshu",
-        text: "Wishing you a very happy birthday Papa!! Stay blessed and enjoy your day ❤"
-    },
-    {
-        info: "Marriage Anniversary Papa and Mummy",
-        date: "16",
-        month: "2",
-        to: "meraghar1998@gmail.com",
-        subject: "Happy marriage anniversary from Anshu",
-        text: "Wishing you a very happy marriage anniversary Papa!! Stay blessed and enjoy your day ❤"
-    },
-    {
-        info: "Shubho's academic year completion",
-        date: "31",
-        month: "7",
-        to: "aayushmanranjan24@gmail.com,meraghar1998@gmail.com",
-        subject: "Congratulations Shubho on your academic year completion",
-        text: "Many many congratulations Shubho on Kudos on successful completion of your academic year❤❤. My best wishes for your upcoming ventures and activities you wish to perform. I urge you to stay safe and reach heights in your career and life!! Stay blessed and enjoy your day ❤"
-    },
-    {
-        info: "Independence Day",
-        date: "15",
-        month: "8",
-        to: "anshumanranjan1998@gmail.com,aayushmanranjan24@gmail.com,meraghar1998@gmail.com",
-        subject: "Happy Independence Day",
-        text: "Wish you a very happy Independence Day❤"
-    },
-    {
-        info: "Gandhi Jayanti",
-        date: "2",
-        month: "10",
-        to: "anshumanranjan1998@gmail.com,aayushmanranjan24@gmail.com,meraghar1998@gmail.com",
-        subject: "Happy Gandhi Jayanti",
-        text: "Wish you a very happy Gandhi Jayanti❤"
-    },
-    {
-        info: "Republic Day",
-        date: "26",
-        month: "1",
-        to: "anshumanranjan1998@gmail.com,aayushmanranjan24@gmail.com,meraghar1998@gmail.com",
-        subject: "Happy Republic Day",
-        text: "Wish you a very happy Republic Day❤"
-    },
-    {
-        info: "Christmas",
-        date: "25",
-        month: "12",
-        to: "anshumanranjan1998@gmail.com,aayushmanranjan24@gmail.com,meraghar1998@gmail.com",
-        subject: "Merry Christmas",
-        text: "Wish you a very happy Merry Christmas❤. May Santa bring a lot of gifts and joy to your life❤❤"
-    },
-    {
-        info: "New Year Day",
-        date: "1",
-        month: "1",
-        to: "anshumanranjan1998@gmail.com,aayushmanranjan24@gmail.com,meraghar1998@gmail.com",
-        subject: "Happy New Year",
-        text: "Wishing you a very happy new year❤. May god bless you and you have a healthy, wealthy and prosperous new year😊❤"
-    },
+    // Add as many objects like the above.
     
 ]
 
 let commonBirthdayHTMLTemplate; // use this to create a template and add this to the below sendMail function in html attribute.
 
 
-let scheduledWishingTime = "31 18 * * *";
-// let scheduledWishingTime = "01 00 * * *";
+let scheduledWishingTime = "31 18 * * *"; //Wishes at 12:01 am.
 // let scheduleEveryTenSecond = "*/10 * * * * *"; 
 // let scheduleDaily = "0-1 0 * * * *"; // run this daily between 12:00 am to 12:01 am
 //1. Approach 1 - Run the cron job at specific time to send email. (recommended)
@@ -175,7 +79,7 @@ const sendMail = async (transporterObj) => {
 
     // send mail with defined transport object
     let info = await transporter.sendMail({
-        from: '"Anshuman Ranjan 😊" bestwishesfromanshu@gmail.com', // sender address
+        from: '"<Name(optional)>"<Email(required)>', // sender address
         to: transporterObj.to, // list of receivers (receivers can be mentioned by separating with a comma)
         subject: transporterObj.subject, // Subject line
         text: transporterObj.text, // plain text body
