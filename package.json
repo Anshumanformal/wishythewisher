@@ -16,12 +16,9 @@
     "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
-    "forever": "^4.0.3",
     "moment": "^2.29.1",
     "node-cron": "^3.0.0",
-    "nodemailer": "^6.7.2",
-    "nodemon": "^2.0.15",
-    "pm2": "^5.2.0"
+    "nodemailer": "^6.7.2"
   },
   "devDependencies": {}
 }
