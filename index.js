@@ -30,6 +30,14 @@ let wishInfo = [
         text: "deployment check Wishing you a very happy birthday Anshu!! Stay blessed and enjoy your day ❤"
     },
     {
+        info: "Birthday wish Anshu from deployment check",
+        date: "12",
+        month: "3",
+        to: "anshumanranjan1998@gmail.com,anshumanformal@gmail.com",
+        subject: "Happy birthday wish from Anshu deployment check",
+        text: "deployment check Wishing you a very happy birthday Anshu!! Stay blessed and enjoy your day ❤"
+    },
+    {
         info: "Birthday wish Anshu",
         date: "15",
         month: "4",
