@@ -8,4 +8,6 @@
 2. Install the dependencies.
 3. Provide the email address and password.
 4. Provide users whom you want to send email on a scheduled basis.
-5. Provide the time when you want the scheduler to run. Create your own expression from <a href="https://crontab.guru/" target=_blank>here<a> or <a href="https://cron.help/" target=_blank>here</a>
+5. Provide the time when you want the scheduler to run. Create your own expression from <a href="https://crontab.guru/">here<a> or <a href="https://cron.help/">here</a>
+6. Voila your own wishythewisher is active now.
+7. If you wish you can also host the app on <a href="https://dashboard.heroku.com/">Heroku</a> and follow the instructions there as provided.
